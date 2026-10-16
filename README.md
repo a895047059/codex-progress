@@ -2,6 +2,18 @@
 <h1 align="center">Codex Progress</h1>
 <p align="center">把 Codex 任务进度放进 macOS 菜单栏。</p>
 
+<table>
+<tr>
+<td width="33%"><a href="docs/assets/screenshot-overview.png"><img src="docs/assets/screenshot-overview.png" alt="任务概览"></a></td>
+<td width="33%"><a href="docs/assets/screenshot-task-picker.png"><img src="docs/assets/screenshot-task-picker.png" alt="任务切换"></a></td>
+<td width="33%"><a href="docs/assets/screenshot-history.png"><img src="docs/assets/screenshot-history.png" alt="历史阶段"></a></td>
+</tr>
+<tr><td align="center">任务概览</td><td align="center">任务切换</td><td align="center">历史阶段</td></tr>
+</table>
+
+<p align="center"><sub>实际界面截图，使用演示任务数据；点击图片查看大图。</sub></p>
+
+
 Codex Progress 是一个独立的 macOS 伴随工具：自动观察本机 Codex 执行记录，用小网格展示子任务、历史阶段、Token 用量和执行速率。点击菜单栏图标即可展开进度窗口。
 
 非 OpenAI 官方产品，不修改 Codex 应用本体。
