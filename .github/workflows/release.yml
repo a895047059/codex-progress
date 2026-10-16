@@ -33,5 +33,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ inputs.tag }}
         run: |
+          for image in dist/*.dmg; do
+            (cd dist; shasum -a 256 "${image#dist/}") > "$image.sha256"
+          done
           gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY"
           gh release upload "$RELEASE_TAG" dist/*.dmg dist/*.dmg.sha256 --clobber --repo "$GITHUB_REPOSITORY"
