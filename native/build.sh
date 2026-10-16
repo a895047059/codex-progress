@@ -11,7 +11,7 @@ NODE_CACHE="$BUILD/node"
 mkdir -p "$CONTENTS/MacOS" "$SERVER/src" "$SERVER/web" "$RESOURCES/runtime" "$BUILD"
 # Supply verified official Node archives via scripts/prepare-runtime.sh first.
 for arch in arm64 x64; do
-  test -f "$NODE_CACHE/node-v$NODE_VERSION-darwin-$arch/bin/node" || { echo "Run ./scripts/prepare-runtime.sh first" >&2; exit 1; }
+  test -f "$NODE_CACHE/node-v$NODE_VERSION-darwin-$arch/bin/node" || { echo "Run bash scripts/prepare-runtime.sh first" >&2; exit 1; }
 done
 cp -R "$PROJECT_ROOT/src/." "$SERVER/src/"
 cp -R "$PROJECT_ROOT/web/." "$SERVER/web/"

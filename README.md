@@ -43,8 +43,8 @@ Codex Progress 是一个独立的 macOS 伴随工具：自动观察本机 Codex 
 ```sh
 git clone https://github.com/a895047059/codex-progress.git
 cd codex-progress
-./scripts/prepare-runtime.sh
-./native/build.sh
+bash scripts/prepare-runtime.sh
+bash native/build.sh
 open "Codex Progress.app"
 ```
 
@@ -52,7 +52,7 @@ open "Codex Progress.app"
 
 ```sh
 "Codex Progress.app/Contents/Resources/runtime/node" --test tests/*.test.mjs
-./scripts/package.sh
+bash scripts/package.sh
 ```
 
 打包生成dist/ 目录下的 `Codex-Progress-1.1-Universal.dmg` 和 SHA-256 文件。可通过 `CODEX_PROGRESS_SIGN_IDENTITY` 指定自己的签名身份；默认仅本地签名，不执行公证。请勿将未公证构建描述为 Apple 已认证。
