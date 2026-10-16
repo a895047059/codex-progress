@@ -1,0 +1,37 @@
+name: Build macOS release
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing source tag to build
+        required: true
+        default: v1.1.0
+permissions:
+  contents: read
+concurrency:
+  group: macos-release-${{ inputs.tag }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: macos-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
+      - name: Prepare verified runtimes
+        run: bash scripts/prepare-runtime.sh
+      - name: Build Universal app
+        run: bash native/build.sh
+      - name: Test bundled runtime
+        run: '"Codex Progress.app/Contents/Resources/runtime/node" --test tests/*.test.mjs'
+      - name: Create and verify disk image
+        run: bash scripts/package.sh
+      - name: Upload release downloads
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY"
+          gh release upload "$RELEASE_TAG" dist/*.dmg dist/*.dmg.sha256 --clobber --repo "$GITHUB_REPOSITORY"
