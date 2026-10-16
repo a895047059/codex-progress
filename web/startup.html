@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>正在读取任务</title>
+<style>
+:root{color-scheme:light dark;--bg:#fff;--ink:#263d31;--muted:#5f6f65;--green:#27634d;--empty:#e7eee9;--yellow:#e6b84f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:13px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+main{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;text-align:center}
+svg{width:76px;height:76px;margin:0 0 23px;overflow:visible}rect{fill:var(--green);animation:light 2.8s ease-in-out infinite;animation-delay:calc(var(--i)*.14s)}
+rect:last-child{fill:var(--yellow);animation:advance 2.8s cubic-bezier(.22,1,.36,1) infinite}
+h1{font-size:14px;font-weight:550;line-height:22px;margin:0 0 7px}p{font-size:12px;line-height:20px;color:var(--muted);margin:0;max-width:28em}
+@keyframes light{0%,15%,100%{opacity:.3}40%,70%{opacity:1}}
+@keyframes advance{0%,15%,100%{transform:translate(-4px,4px);opacity:.6}45%,75%{transform:translate(0,0);opacity:1}}
+@media(prefers-color-scheme:dark){:root{--bg:#1d1e1d;--ink:#e2ebe5;--muted:#a8b6ac;--green:#72b793;--yellow:#e6bd63}}
+@media(prefers-reduced-motion:reduce){rect,rect:last-child{animation:none;opacity:1}}
+</style></head><body><main role="status" aria-live="polite" aria-busy="true">
+<svg viewBox="0 0 100 100" aria-hidden="true"><rect style="--i:0" x="10" y="12" width="21" height="21" rx="5"/><rect style="--i:1" x="37" y="12" width="21" height="21" rx="5"/><rect style="--i:5" x="10" y="39" width="21" height="21" rx="5"/><rect style="--i:4" x="10" y="66" width="21" height="21" rx="5"/><rect style="--i:3" x="37" y="66" width="21" height="21" rx="5"/><rect style="--i:2" x="64" y="66" width="21" height="21" rx="5"/><rect x="69" y="7" width="21" height="21" rx="5"/></svg>
+<h1>正在读取任务…</h1><p>首次打开需要一点时间，任务就绪后会自动显示。</p>
+</main></body></html>

@@ -1,0 +1,15 @@
+#recording-dialog{width:min(480px,calc(100vw - 32px));max-height:calc(100vh - 32px);padding:18px;color:var(--ink);background:var(--surface,#fff);border:1px solid var(--line,#ddd);border-radius:10px}
+#recording-dialog::backdrop{background:rgb(20 25 22 / 20%)}
+#recording-dialog p{line-height:1.6;font-size:12px}
+#recording-dialog .recording-intro{color:var(--muted,#666)}
+#recording-target{overflow-wrap:anywhere;max-height:76px;overflow:auto}
+#recording-message{min-height:38px}
+.recording-actions{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.recording-actions button{padding:6px 10px;border:1px solid var(--line,#ddd);border-radius:5px;background:transparent;color:inherit;font:inherit;font-size:12px;cursor:pointer}
+.recording-actions button:hover{background:rgb(100 120 100 / 8%)}
+.recording-actions button:focus-visible{outline:2px solid var(--green,#348641);outline-offset:2px}
+.recording-actions button:disabled{opacity:.5;cursor:wait}
+#recording-start,#recording-stop{font-weight:600}
+#recording-resume{margin-left:8px;font-size:11px;color:var(--green-ink,#276633)}
+#recording-consent{padding:12px;margin:10px 0;border:1px solid var(--line,#ddd);border-radius:6px}
+#recording-consent>strong{font-size:12px}

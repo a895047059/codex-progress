@@ -1,0 +1,16 @@
+.DS_Store
+work/
+runtime/
+*.app/
+*.dmg
+*.dmg.sha256
+*.vsix
+node_modules/
+.env
+.env.*
+*.log
+
+dist/
+docs/internal/
+design-assets/
+/*preview*
